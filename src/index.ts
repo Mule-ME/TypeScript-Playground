@@ -14,8 +14,7 @@ let result  //which is === let result: any
 let numbers: number[] = [1, 2, 3]
 
 //3,Tuples
-//
-
+//if we have a fixed number of element must have 2 input
 const myCollection:[string, number] = ["Yosef", 1] 
 
 
