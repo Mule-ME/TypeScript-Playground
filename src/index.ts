@@ -65,7 +65,10 @@ let employee: Employee = {
 }
 
 //<-------- Union Types -------->
-//to have more than one types on variable
+//to have more than one types on variable (for combining types)
+//but value can be only ONE of the these types
+let weights: number | string | boolean
+
 function kgToLbs(weight: number | string): number {
 
   //Narrowing
@@ -75,6 +78,29 @@ function kgToLbs(weight: number | string): number {
     return parseInt(weight) * 2.2
 
 }
-
 kgToLbs(10)
 kgToLbs("10")
+
+
+//<-------- Intersection Types -------->
+//to have more than one types on variable
+//but value can be all of the type types
+let value: number & string //object with two types
+
+//best example. 
+
+type Draggable = {
+  drag: () => void
+}
+
+type Resizable = {
+   resize: () => void
+}
+
+type UIWidget = Draggable & Resizable // is can be both types
+
+const textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
+}
+
