@@ -104,3 +104,13 @@ const textBox: UIWidget = {
   resize: () => {}
 }
 
+//<-------- Literal Types -------->
+//Literal(exact, specific)
+//to limit a values we can assign to a variable
+
+type Quantity = 50 | 100
+let quantity :Quantity = 100
+
+type Metric = "cm" | "inch"
+
+  
