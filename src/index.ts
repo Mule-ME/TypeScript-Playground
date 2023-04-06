@@ -125,3 +125,25 @@ function greet(name: string | null | undefined) {
 greet("Mulualem")
 greet(undefined)
 greet(undefined)
+
+//<-------- Optional chaining -------->
+//there are three area of usage 
+
+type Customer = {
+  birthday?: Date
+}
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() }
+}
+
+let customer = getCustomer(1)
+//1, Optional PROPERTY access operator
+console.log(customer?.birthday?.getFullYear())
+
+ //2, Optional element access operator
+ // data?.[0]
+
+ //3, Optional call operator
+ let log: any = null;
+ log?.("log")
