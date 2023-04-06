@@ -39,7 +39,7 @@ function calculateTac(
 
 {
 
-  let x; // to tackle this error turn off  //"noUnusedLocals": true, 3.
+  let x; // to tackle this error turn off //"noUnusedLocals": true, 3.
   if (taxYear < 2022)
     return income * 1.2
   return income * 1.3
@@ -48,7 +48,7 @@ console.log(calculateTac(10_000)) //or
 console.log(calculateTac(10_000, 2023))
 
 
-//TYpe Aliases 
+//<-------- Type Aliases --------> 
 type Employee = {
   readonly id: number, //readonly let us to don't update this property of the object immutable
   name: string,
@@ -63,3 +63,18 @@ let employee: Employee = {
     console.log(date)
   }
 }
+
+//<-------- Union Types -------->
+//to have more than one types on variable
+function kgToLbs(weight: number | string): number {
+
+  //Narrowing
+  if (typeof weight === 'number')
+    return weight * 2.2
+  else
+    return parseInt(weight) * 2.2
+
+}
+
+kgToLbs(10)
+kgToLbs("10")
