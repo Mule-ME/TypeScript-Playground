@@ -30,11 +30,11 @@ enum Size { Small = 1, Medium, Large } //define it as a constant to get  the mos
 let mySize: Size = Size.Medium
 console.log(mySize) // o/p = 2
 
-//Functions
+//5, Functions
 function calculateTac(
   income: number,
   taxYear = 2019,
-  unUsedParam =1  // to tackle this error turn on //"noUnusedParameters": true, 1
+  unUsedParam = 1  // to tackle this error turn on //"noUnusedParameters": true, 1
 ): number // to tackle this error turn on //"noImplicitReturns": true, 2.
 
 {
@@ -47,3 +47,16 @@ function calculateTac(
 console.log(calculateTac(10_000)) //or
 console.log(calculateTac(10_000, 2023))
 
+//6, Objects
+
+let employee: {
+  readonly id: number, //readonly let us to don't update this property of the object immutable
+  name: string,
+  retire: (date:Date) =>void
+} = {
+  id: 1,
+  name: "John Doe",
+  retire: (date:Date) =>{
+  console.log(date)
+  }
+}
