@@ -171,3 +171,21 @@ let ride = {
 let phone = <HTMLInputElement> document.getElementById("phone")
 
 
+
+//<-------- The unknown Type  -------->
+
+function render(document: unknown) {
+
+  
+  document.move()
+  document.fly()
+  document.whateverWeWant()
+
+  //to over come the above error we use Narrowing (it is used only for primitive data types)
+  if(document === "string") {
+    document.toUpperCase()
+ }
+
+}
+
+
