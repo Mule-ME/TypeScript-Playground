@@ -94,23 +94,34 @@ type Draggable = {
 }
 
 type Resizable = {
-   resize: () => void
+  resize: () => void
 }
 
 type UIWidget = Draggable & Resizable // is can be both types
 
 const textBox: UIWidget = {
-  drag: () => {},
-  resize: () => {}
+  drag: () => { },
+  resize: () => { }
 }
 
 //<-------- Literal Types -------->
 //Literal(exact, specific)
 //to limit a values we can assign to a variable
-
 type Quantity = 50 | 100
-let quantity :Quantity = 100
+let quantity: Quantity = 100
 
 type Metric = "cm" | "inch"
 
-  
+
+//<-------- Nullable Types -------->
+function greet(name: string | null | undefined) {
+
+  if (name)
+    console.log("Hello " + name.toUpperCase())
+  else
+    console.log("Hello who are you!!!")
+}
+
+greet("Mulualem")
+greet(undefined)
+greet(undefined)
