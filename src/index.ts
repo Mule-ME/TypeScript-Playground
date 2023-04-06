@@ -34,29 +34,32 @@ console.log(mySize) // o/p = 2
 function calculateTac(
   income: number,
   taxYear = 2019,
-  unUsedParam = 1  // to tackle this error turn on //"noUnusedParameters": true, 1
-): number // to tackle this error turn on //"noImplicitReturns": true, 2.
+  unUsedParam = 1  // to tackle this error turn off //"noUnusedParameters": true, 1
+): number // to tackle this error turn off //"noImplicitReturns": true, 2.
 
 {
 
-  let x; // to tackle this error turn on //"noUnusedLocals": true, 3.
+  let x; // to tackle this error turn off  //"noUnusedLocals": true, 3.
   if (taxYear < 2022)
     return income * 1.2
-  // return income * 1.3
+  return income * 1.3
 }
 console.log(calculateTac(10_000)) //or
 console.log(calculateTac(10_000, 2023))
 
-//6, Objects
 
-let employee: {
+//TYpe Aliases 
+type Employee = {
   readonly id: number, //readonly let us to don't update this property of the object immutable
   name: string,
-  retire: (date:Date) =>void
-} = {
+  retire: (date: Date) => void
+}
+
+//6, Objects
+let employee: Employee = {
   id: 1,
   name: "John Doe",
-  retire: (date:Date) =>{
-  console.log(date)
+  retire: (date: Date) => {
+    console.log(date)
   }
 }
