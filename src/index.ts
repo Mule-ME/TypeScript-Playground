@@ -104,6 +104,7 @@ const textBox: UIWidget = {
   resize: () => { }
 }
 
+
 //<-------- Literal Types -------->
 //Literal(exact, specific)
 //to limit a values we can assign to a variable
@@ -126,6 +127,7 @@ greet("Mulualem")
 greet(undefined)
 greet(undefined)
 
+
 //<-------- Optional chaining -------->
 //there are three area of usage 
 
@@ -141,9 +143,13 @@ let customer = getCustomer(1)
 //1, Optional PROPERTY access operator
 console.log(customer?.birthday?.getFullYear())
 
- //2, Optional element access operator
+ //2, Optional ELEMENT access operator
  // data?.[0]
 
- //3, Optional call operator
+ //3, Optional CALL operator
  let log: any = null;
- log?.("log")
+ log("log") //our program will crush cause log null
+ log?.("log") //will get undefined
+
+
+ //<-------- Nullish Coalescing Operator -------->
