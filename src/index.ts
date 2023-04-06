@@ -161,31 +161,47 @@ let ride = {
 //<-------- Type Assertions  -------->
 //It didn't do any thing in compilation time it is used for us to just tell the compiler we know that specific type is what
 
- // => let phone = document.getElementById("phone") 
- // it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, tp overcome this we do.
+// => let phone = document.getElementById("phone") 
+// it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, tp overcome this we do.
 
 //  let phone = document.getElementById("phone") as HTMLInputElement
 //  phone.value
 
 //OR 
-let phone = <HTMLInputElement> document.getElementById("phone")
+let phone = <HTMLInputElement>document.getElementById("phone")
 
 
 
 //<-------- The unknown Type  -------->
-
 function render(document: unknown) {
 
-  
   document.move()
   document.fly()
   document.whateverWeWant()
 
   //to over come the above error we use Narrowing (it is used only for primitive data types)
-  if(document === "string") {
+  if (document === "string") {
     document.toUpperCase()
- }
+  }
 
 }
+
+//<-------- The never Type  -------->
+//it represent the value that NEVER occur
+
+function reject(message: string): never {
+  throw new Error(message)
+}
+
+function processEvents () :never {
+  while(true){
+    //Read a message from a queue
+  }
+}
+
+processEvents ()
+console.log("Hello") //this code will never execute because of the above.
+
+
 
 
