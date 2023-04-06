@@ -143,13 +143,31 @@ let customer = getCustomer(1)
 //1, Optional PROPERTY access operator
 console.log(customer?.birthday?.getFullYear())
 
- //2, Optional ELEMENT access operator
- // data?.[0]
+//2, Optional ELEMENT access operator
+// data?.[0]
 
- //3, Optional CALL operator
- let log: any = null;
- log("log") //our program will crush cause log null
- log?.("log") //will get undefined
+//3, Optional CALL operator
+let log: any = null;
+log("log") //our program will crush cause log null
+log?.("log") //will get undefined
 
 
- //<-------- Nullish Coalescing Operator -------->
+//<-------- Nullish Coalescing Operator -------->
+let speed: number | null = null
+let ride = {
+  speed: speed ?? 0
+}
+
+//<-------- Type Assertions  -------->
+//It didn't do any thing in compilation time it is used for us to just tell the compiler we know that specific type is what
+
+ // => let phone = document.getElementById("phone") 
+ // it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, tp overcome this we do.
+
+//  let phone = document.getElementById("phone") as HTMLInputElement
+//  phone.value
+
+//OR 
+let phone = <HTMLInputElement> document.getElementById("phone")
+
+
