@@ -37,6 +37,11 @@ export class Account {
     return this._balance;
   }
 
+  //to update the above we can use, use getter
+  get balance(): number {
+    return this._balance;
+  }
+
   //private method also work for methods
   private calculateInterest(balance: number, rate: number): number {
     return (balance * rate) / 100;
@@ -50,13 +55,25 @@ account.deposit(100);
 console.log(account);
 console.log(account instanceof Account); //boolean operator
 
-//<------- Parameter Properties --------->
-
 class Person {
   constructor(
+    //<------- Parameter Properties --------->
     public readonly id: number,
     public name: string,
     public age: number,
     private _password: string
   ) {}
+//<------- Getters and Setters --------->
+//getter a method inside of a class to get a value of a properties
+ get hashPassword () {
+    const hashKey = "734rygf7vs5tgr3f7d6w534trgfw7y65t3grf"
+    return this._password.concat(hashKey);
+ }
+
 }
+
+const person = new Person(1, "Mulualem", 20, "123456");
+
+console.log(person.name) 
+ 
+
