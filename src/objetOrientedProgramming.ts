@@ -134,7 +134,7 @@ class Person1 {
   }
 
   walk() {
-    console.log("W alking");
+    console.log("Walking");
   }
 }
 
@@ -144,11 +144,37 @@ class Student extends Person1 {
   }
 
   takeTest() {
-   console.log("Taking a test")
-  } 
+    console.log("Taking a test");
+  }
 }
 
-let student = new Student(1, "Mulualem", "Eshetu")
-student.walk
+let student = new Student(1, "Mulualem", "Eshetu");
+student.walk;
 
+//<------- Method Overriding --------->
+class Teacher extends Person1 {
+  // "noImplicitOverride": true,
+  override get fullName() {
+    return "Professor " + super.fullName;
+  }
+}
 
+let teacher = new Teacher("Mosh", "Hamedani");
+console.log(teacher.fullName);
+
+//<------- Polymorphism ** --------->
+//Poly ->Many, Morph->Form => Polymorphism => Many Form
+
+//It follows Open closed principal which means
+//Classes should be OPEN for EXTENSION and CLOSED for MODIFICATION
+
+class Principal extends Person1 {
+  override get fullName() {
+    return "Principal" + super.fullName;
+  }
+}
+
+function printNames(people: Person1[]) {
+  for (let person of people) 
+    console.log(person.fullName);
+}
