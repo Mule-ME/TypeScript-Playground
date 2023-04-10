@@ -81,13 +81,13 @@ class Person {
   }
 }
 
-const person = new Person(1, "Mulualem", 20, "123456");
-console.log(person.name);
+const capitan = new Person(1, "Mulualem", 20, "123456");
+console.log(capitan.name);
 
 //<------- Indexing Signatures --------->
 //it help us to add or change properties of objects dynamically
 class SeatAssignment {
-  //INdex signature property
+  //Index signature property
   [seatNumber: string]: string;
 }
 
@@ -117,7 +117,38 @@ class Ride {
 const ride1 = new Ride();
 ride1.start();
 
-const ride2 = new Ride()
+const ride2 = new Ride();
 ride2.start();
 
-console.log(Ride.activeRides)
+console.log(Ride.activeRides);
+
+//<------- Inheritance --------->
+//we have Parent/Base/Super class &
+// Child/Derived/Sub
+
+class Person1 {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  walk() {
+    console.log("W alking");
+  }
+}
+
+class Student extends Person1 {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+   console.log("Taking a test")
+  } 
+}
+
+let student = new Student(1, "Mulualem", "Eshetu")
+student.walk
+
+
