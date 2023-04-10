@@ -174,7 +174,43 @@ class Principal extends Person1 {
   }
 }
 
+//Polymorphism
+printNames([
+  new Student(1, "Mulualem", "Eshetu"),
+  new Principal("Mosh", "Hamedani"),
+  new Teacher("Mary", "Smith"),
+]);
+
 function printNames(people: Person1[]) {
-  for (let person of people) 
-    console.log(person.fullName);
+  for (let person of people) console.log(person.fullName);
 }
+
+//<------- Private vs Protected Members --------->
+//protected members are inherited but privets are not
+
+//<------- Abstract Classes and Methods --------->
+
+abstract class Shape {
+  constructor(public color: string) {}
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+
+  override render(): void {
+    console.log("Rendering a circle");
+  }
+}
+
+//we don't have to do like the below cause SHAPE is not a real object to stop us from doing this we have to use abstract
+// let shape = new Shape("red")
+// shape.render();
+
+const circle = new Circle(4, "Green");
+console.log(circle);
+
+
+//<-------* Interfaces *--------->
