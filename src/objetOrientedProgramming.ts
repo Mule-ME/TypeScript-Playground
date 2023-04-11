@@ -149,7 +149,7 @@ class Student extends Person1 {
 }
 
 let student = new Student(1, "Mulualem", "Eshetu");
-student.walk;
+student.walk();
 
 //<------- Method Overriding --------->
 class Teacher extends Person1 {
@@ -212,5 +212,5 @@ class Circle extends Shape {
 const circle = new Circle(4, "Green");
 console.log(circle);
 
-
 //<-------* Interfaces *--------->
+//to define the shape of objects

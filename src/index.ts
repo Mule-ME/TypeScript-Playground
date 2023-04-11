@@ -31,7 +31,7 @@
 // console.log(mySize) // o/p = 2
 
 // //5, Functions
-// function calculateTac(
+// function calculateTax(
 //   income: number,
 //   taxYear = 2019,
 //   unUsedParam = 1  // to tackle this error turn off //"noUnusedParameters": true, 1
@@ -116,7 +116,6 @@
 
 // //<-------- Nullable Types -------->
 // function greet(name: string | null | undefined) {
-
 //   if (name)
 //     console.log("Hello " + name.toUpperCase())
 //   else
@@ -162,7 +161,7 @@
 // //It didn't do any thing in compilation time it is used for us to just tell the compiler we know that specific type is what
 
 // // => let phone = document.getElementById("phone") 
-// // it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, tp overcome this we do.
+// // it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, to overcome this we do.
 
 // //  let phone = document.getElementById("phone") as HTMLInputElement
 // //  phone.value
