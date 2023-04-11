@@ -137,10 +137,10 @@ type WatchedParameter = {
   parameterIndex: number;
 };
 
-const WatchedParameters: WatchedParameter[] = [];
+const watchedParameters: WatchedParameter[] = [];
 
 function Watch(target: any, methodName: string, parameterIndex: number) {
-  WatchedParameters.push({
+  watchedParameters.push({
     methodName,
     parameterIndex,
   });
@@ -149,3 +149,12 @@ function Watch(target: any, methodName: string, parameterIndex: number) {
 class Vehicle {
   move(@Watch speed: number) {}
 }
+
+console.log(watchedParameters) //[ { methodName: 'move', parameterIndex: 0 } ]
+
+//if  move(@Watch speed: number, @Watch location:string) {}
+//console.log(watchedParameters) 
+//[
+//   { methodName: 'move', parameterIndex: 1 },
+//   { methodName: 'move', parameterIndex: 0 }
+// ]
