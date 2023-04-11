@@ -67,7 +67,7 @@ class Person {
     public name: string,
     public age: number,
     private _password: string
-  ) {}
+  ) { }
 
   //<------- Getters and Setters --------->
   //getter a method inside of a class to get a value of a properties
@@ -127,7 +127,7 @@ console.log(Ride.activeRides);
 // Child/Derived/Sub
 
 class Person1 {
-  constructor(public firstName: string, public lastName: string) {}
+  constructor(public firstName: string, public lastName: string) { }
 
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
@@ -191,7 +191,7 @@ function printNames(people: Person1[]) {
 //<------- Abstract Classes and Methods --------->
 
 abstract class Shape {
-  constructor(public color: string) {}
+  constructor(public color: string) { }
   abstract render(): void;
 }
 
@@ -214,3 +214,42 @@ console.log(circle);
 
 //<-------* Interfaces *--------->
 //to define the shape of objects
+//they can't have method implementations, we only have method declarations
+
+// abstract class Calendar {
+
+//   constructor(public name: string) { }
+
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+//Instead of using the above class we can use an interfaces
+interface ICalendar {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
+}
+
+interface ICloudCalendar extends ICalendar {
+  sync(): void;
+}
+
+class GoogleCalendar implements ICloudCalendar {
+  constructor(public name: string) { }
+
+  addEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+
+  sync(): void {
+    throw new Error("Method not implemented.");
+  }
+}
+
+const googleCalendar = new GoogleCalendar("New calendar");
+
+console.log(googleCalendar ) 
