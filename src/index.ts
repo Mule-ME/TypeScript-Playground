@@ -202,8 +202,16 @@
 // processEvents ()
 // console.log("Hello") //this code will never execute because of the above.
 
-import {Account} from "./objetOrientedProgramming"
+// import {Account} from "./objetOrientedProgramming"
 
-Account;
+// Account;
 
+
+//Working with JS
+// import {calculateTax,personalInfo} from "./WorkingWithJS/test"
+// import { addNumber } from "./WorkingWithJS/declarationFiles/declarationFile"
+
+// console.log(calculateTax(500))
+// console.log(personalInfo("Mulualem", "Eshetu" , 26))
+// console.log(addNumber(3, 4))
 
