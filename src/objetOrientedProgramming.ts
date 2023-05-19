@@ -4,6 +4,7 @@
 //objects are the building block of our application, we will have 100s or 1000s object in our app
 //Objects are consists of => 1. DATA(state)->Properties, 2. OPERATIONS(behavior)->Methods
 
+
 //<------- Creating Classes --------->
 //it is a blueprint for creating objects (or factory)
 
@@ -67,7 +68,6 @@ class Person {
     public name: string,
     public age: number,
     private _password: string
-  ) { }
 
   //<------- Getters and Setters --------->
   //getter a method inside of a class to get a value of a properties

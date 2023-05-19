@@ -2,6 +2,7 @@
 //"allowJs": true,
 //plus we have to change our module setup to //"module": "CommonJS"
 
+
 //<-------- Type Checking JS Code -------->
 // "checkJs": true,  /* Enable error reporting in type-checked JavaScript files. */
 //-> this is on of the solution
@@ -23,7 +24,7 @@ export function personalInfo(firstName, lastName, age) {
   return `I'm ${firstName} ${lastName} and am ${age}`;
 }
 
- 
+
 //<-------- Using Definitely Typed Declaration Files -------->
 //npm i lodash  
 //use DefinitelyTyped ->GITHUB repo 
@@ -31,4 +32,4 @@ export function personalInfo(firstName, lastName, age) {
 //mpl i chalk
 
 import * as _ from "lodash"
-const clone =  _.clone([1,2,3])
+const clone = _.clone([1, 2, 3])

@@ -3,12 +3,10 @@
 //   age += 10
 // console.log(age)
 
-
 // //Types
-// //1,any 
+// //1,any
 // // variable declared without any type and without any initialization //eg=>
 // let result  //which is === let result: any
-
 
 // //2, Arrays
 // let numbers: number[] = [1, 2, 3]
@@ -17,11 +15,11 @@
 // //if we have a fixed number of element must have 2 input
 // const myCollection: [string, number] = ["Mulualem", 1]
 
-// //4, Enum 
+// //4, Enum
 // //which represent a list of related constants e.g =>
 
 // //Don't have to use the bellow
-// // const small =1 
+// // const small =1
 // // const medium = 2
 // // const large = 3 simply we can define these constants using enum
 
@@ -47,8 +45,7 @@
 // console.log(calculateTac(10_000)) //or
 // console.log(calculateTac(10_000, 2023))
 
-
-// //<-------- Type Aliases --------> 
+// //<-------- Type Aliases -------->
 // type Employee = {
 //   readonly id: number, //readonly let us to don't update this property of the object immutable
 //   name: string,
@@ -81,13 +78,12 @@
 // kgToLbs(10)
 // kgToLbs("10")
 
-
 // //<-------- Intersection Types -------->
 // //to have more than one types on variable
 // //but value can be all of the type types
 // let value: number & string //object with two types
 
-// //best example. 
+// //best example.
 
 // type Draggable = {
 //   drag: () => void
@@ -104,7 +100,6 @@
 //   resize: () => { }
 // }
 
-
 // //<-------- Literal Types -------->
 // //Literal(exact, specific)
 // //to limit a values we can assign to a variable
@@ -112,7 +107,6 @@
 // let quantity: Quantity = 100
 
 // type Metric = "cm" | "inch"
-
 
 // //<-------- Nullable Types -------->
 // function greet(name: string | null | undefined) {
@@ -126,9 +120,8 @@
 // greet(undefined)
 // greet(undefined)
 
-
 // //<-------- Optional chaining -------->
-// //there are three area of usage 
+// //there are three area of usage
 
 // type Customer = {
 //   birthday?: Date
@@ -150,7 +143,6 @@
 // log("log") //our program will crush cause log null
 // log?.("log") //will get undefined
 
-
 // //<-------- Nullish Coalescing Operator -------->
 // let speed: number | null = null
 // let ride = {
@@ -160,16 +152,14 @@
 // //<-------- Type Assertions  -------->
 // //It didn't do any thing in compilation time it is used for us to just tell the compiler we know that specific type is what
 
-// // => let phone = document.getElementById("phone") 
+// // => let phone = document.getElementById("phone")
 // // it just simply tell for the compiler it is HTMLElement not its specific type so if we try to access like : phone.vale, to overcome this we do.
 
 // //  let phone = document.getElementById("phone") as HTMLInputElement
 // //  phone.value
 
-// //OR 
+// //OR
 // let phone = <HTMLInputElement>document.getElementById("phone")
-
-
 
 // //<-------- The unknown Type  -------->
 // function render(document: unknown) {
@@ -206,7 +196,6 @@
 
 // Account;
 
-
 //Working with JS
 // import {calculateTax,personalInfo} from "./WorkingWithJS/test"
 // import { addNumber } from "./WorkingWithJS/declarationFiles/declarationFile"
@@ -214,4 +203,3 @@
 // console.log(calculateTax(500))
 // console.log(personalInfo("Mulualem", "Eshetu" , 26))
 // console.log(addNumber(3, 4))
-
